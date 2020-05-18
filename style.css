@@ -1,0 +1,66 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.jumbotron{
+    text-align: center;
+    background-color:blue;
+    color: white;
+}
+
+#navigation{
+    float: left;
+    width: 29%;
+}
+
+#dashboard{
+    float:right;
+    width: 69%;
+}
+#navContainer{
+    background-color: lightgray;
+}
+#input{
+    margin:5px;
+}
+#submitBtn{
+    background-color: blue;
+    color: white;
+}
+.cityButton{
+    display: block;
+    align-items: left;
+    padding-top: 20px;
+    padding-bottom:20px;
+    width: 90%;
+    margin: 5px;
+    font-size: 18px;
+    color:white;
+    background-color: skyblue;
+}
+
+.row1{
+    border: solid;
+    padding: 5px;
+    width: 90%;
+    color: blue;
+}
+
+.row2{
+    padding: 5px;
+    margin-top:10px;
+    width: 90%;
+    color: white;
+}
+
+#futForecast{
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+    border: solid;
+    color: blue;
+}
+
+
+
+
