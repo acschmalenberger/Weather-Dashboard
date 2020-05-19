@@ -82,7 +82,7 @@ $( document ).ready(function() {
                             $forecastCard.addClass("list-group");
                             
                             var $date = $("<h5>");
-                            $date.append(d2);
+                            $date.append("Date: "+ d2);
 
                             var $wicon = $("<img>");
                             $wicon.attr("src",iconurl2);
@@ -90,10 +90,10 @@ $( document ).ready(function() {
                             $wicon.width("50px");
 
                             var $temp = $("<h6>");
-                            $temp.append(response.daily[i].temp.day);
+                            $temp.append("Temperature: " +response.daily[i].temp.day);
 
                             var $humidity = $("<h6>");
-                            $humidity.append((response.daily[i].humidity));
+                            $humidity.append("Humidity: " +response.daily[i].humidity);
 
                             ($forecastCard).append($date);
                             ($forecastCard).append($wicon);
