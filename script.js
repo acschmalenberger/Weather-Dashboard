@@ -1,8 +1,25 @@
 $( document ).ready(function() {
+    
+    // $(".cityButton").on("click", function(cityevent){
+    //     var $cityBtn=$("button").text();
+    //     console.log($cityBtn)
+
+    // })
+    //need to connect text from button to search input field
+    
+
     $("button").on("click", function(event) {
-        event.preventDefault();
+        // function clear() {
+        //     $(".dashboard").empty();
+        // }
+        // clear();
+        // need to clear betweensearches, syntax  is an issue
+       
+        event.preventDefault()
+
         var city = $("input").val();
-        
+        localStorage.setItem("city", city)
+
         var geoCodeURL= "https://geocode.xyz/"
         $.ajax({
             url: geoCodeURL,
@@ -38,7 +55,21 @@ $( document ).ready(function() {
                     $(".temp").append(response.current.temp);
                     $(".humidity").append(response.current.humidity);
                     $(".wind").append(response.current.wind_speed);
-                    $(".uv").append(response.current.uvi);
+                   
+                    var uvFinal = (response.current.uvi)
+                    var uvBtn = $("<button>").text(uvFinal);
+		            $(".uv").append(uvBtn);
+		                if (uvFinal < 3) {
+                            uvBtn.attr("class", "uvGreen");
+		                } else if (uvFinal < 6) {
+                            uvBtn.attr("class", "uvYellow");
+		                } else if (uvFinal < 8) {
+                            uvBtn.attr("class", "uvOrange");
+		                } else if (uvFinal < 11) {
+			                uvBtn.attr("class", "uvRed");
+		                } else {
+                            uvBtn.attr("class", "uvPurple");
+		                }
     
                     function futForecast(){
                         for (var i=1; i<6; i++ ){
@@ -72,20 +103,11 @@ $( document ).ready(function() {
                         }
                     }
                     futForecast();
-                    // $("#dashboard").empty();
-                    
-                        // $(".dateFut").append(d2)
-                        // $(".tempFut").append(response.daily[i].temp.day);
-                        // $(".humidityFut").append(response.daily[i].humidity);
-                        // $("#wicon2").attr("src",iconurl2)
                     
                 });
             });
-        
-        
-        
-        
-        
+                
     });
+    
 });
  

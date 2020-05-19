@@ -60,6 +60,30 @@ body {
     border: solid;
     color: blue;
 }
+.uvGreen {
+	background-color: lightgreen;
+	border-radius: 5px;
+}
+
+.uvYellow {
+	background-color: lightyellow;
+	border-radius: 5px;
+}
+
+.uvOrange {
+	background-color: lightsalmon;
+	border-radius: 5px;
+}
+
+.uvRed {
+	background-color: palevioletred;
+	border-radius: 5px;
+}
+
+.uvPurple {
+	background-color: violet;
+	border-radius: 5px;
+}
 
 
 
